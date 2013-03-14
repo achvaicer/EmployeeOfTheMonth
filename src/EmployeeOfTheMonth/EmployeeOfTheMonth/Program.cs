@@ -12,7 +12,6 @@ namespace EmployeeOfTheMonth
         static void Main(string[] args)
         {
             var firstday = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-            var cultureInfo = new CultureInfo("pt-BR");
 
             Console.WriteLine("Data | Dia Semana | Entrada | Inicio Almoço | Retorno Almoço | Saída");
 

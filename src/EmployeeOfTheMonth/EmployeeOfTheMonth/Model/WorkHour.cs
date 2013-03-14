@@ -36,7 +36,7 @@ namespace EmployeeOfTheMonth.Model
         public WorkHour(DateTime date)
         {
             _base = date;
-            _random = new Random();
+            _random = new Random(date.Day + Environment.MachineName.GetHashCode() + Environment.TickCount);
             Entrance = date.AddHours(Constants.MinimumEntrance).AddMinutes(GetMinutes());
             StartLunch = Entrance.AddHours(Constants.MinimumHoursBetweenEntranceAndLunchStart).AddMinutes(GetMinutes());
             EndLunch = StartLunch.AddHours(Constants.MinimumLunchHours).AddMinutes(GetMinutes());
