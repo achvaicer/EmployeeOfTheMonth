@@ -40,7 +40,7 @@ namespace EmployeeOfTheMonth.Model
             Entrance = date.AddHours(Constants.MinimumEntrance).AddMinutes(GetMinutes());
             StartLunch = Entrance.AddHours(Constants.MinimumHoursBetweenEntranceAndLunchStart).AddMinutes(GetMinutes());
             EndLunch = StartLunch.AddHours(Constants.MinimumLunchHours).AddMinutes(GetMinutes());
-            Exit = Entrance.AddHours(Constants.TotalWorkHours).Add(TotalLunch).AddMinutes(GetMinutes());
+            Exit = Entrance.AddHours(Constants.TotalWorkHours).Add(TotalLunch);
         }
 
         public override string ToString()
