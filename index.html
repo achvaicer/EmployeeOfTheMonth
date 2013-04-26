@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee of the Month Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>This is your working time</h1>
+
+      <table class="table table-striped">
+      	<thead>
+      		<tr>
+            <th>Date</th>
+            <th>Day of Week</th>
+            <th>Entrance</th>
+            <th>Start of Lunch</th>
+            <th>End of Lunch</th>
+            <th>Exit</th>
+          </tr>
+      	</thead>
+        <tbody>
+        </tbody>
+      </table>
+
+      <h4>You really are a hard worker. You deserve an extra bonus this month!</h4>
+  </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/time.extensions.js"></script>
+    <script src="js/workhour.js"></script>
+    <script type="text/javascript">
+
+      var lastday = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+
+      $(document).ready(function() {
+      
+        var len = lastday[new Date().getMonth()];
+        var tbody = $("tbody");
+        
+        for (var i = 0; i < len; i++) {
+            var workhour = new WorkHour(i);
+            tbody.append(workhour.RenderAsRow());
+        }
+      });
+    </script>
+  </body>
+</html>
