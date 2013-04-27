@@ -20,9 +20,9 @@ function WorkHour(day) {
 
 	this.TotalLunch = function() { return (new Date(this.EndLunch) - new Date(this.StartLunch)) / 60000; };
 
-	this.padLeftMinutes = function(minutes) {  
-		if (minutes && minutes.toString().length < 2)
-			return "0" + minutes;
+	this.padLeftMinutes = function(minutes) { 
+		if (!minutes || minutes.toString().length == 0) return "00"; 
+		if (minutes.toString().length == 1) return "0" + minutes;
 		return minutes;
 	}
 
