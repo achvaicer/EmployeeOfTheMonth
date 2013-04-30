@@ -45,7 +45,7 @@
         var len = lastday[new Date().getMonth()];
         var tbody = $("tbody");
         
-        for (var i = 0; i < len; i++) {
+        for (var i = 1; i <= len; i++) {
             var workhour = new WorkHour(i);
             tbody.append(workhour.RenderAsRow());
         }

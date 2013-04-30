@@ -36,7 +36,7 @@ function WorkHour(day) {
 		var td = $("<td />");
 
 		tr
-			.append(td.clone().text((day + 1) + "/" + month))
+			.append(td.clone().text((day) + "/" + month))
 			.append(td.clone().text(week[weekday]))
 			.append(td.clone().text("**:**"))
 			.append(td.clone().text("**:**"))
@@ -50,11 +50,11 @@ function WorkHour(day) {
 		var tr = $("<tr />");
 		var td = $("<td />");
 
-		var weekday = new Date(year, month, day).getDay();
+		var weekday = new Date(year, month - 1, day).getDay();
 		if (weekday == 0 || weekday == 6) return renderWeekend(weekday);
 
 		tr
-			.append(td.clone().text((day + 1) + "/" + month))
+			.append(td.clone().text((day) + "/" + month))
 			.append(td.clone().text(week[weekday]))
 			.append(td.clone().text(new Date(self.Entrance).getHours() + ":" + self.padLeftMinutes(new Date(self.Entrance).getMinutes())))
 			.append(td.clone().text(new Date(self.StartLunch).getHours() + ":" + self.padLeftMinutes(new Date(self.StartLunch).getMinutes())))
