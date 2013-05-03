@@ -2,8 +2,8 @@ function WorkHour(day) {
 
 	var self = this;
 
-	var year = new Date().getFullYear();
-	var month = new Date().getMonth() + 1;
+	var year = parseInt($("#year").val());
+	var month = parseInt($("#month").val()) + 1;
 	
 
 	var date = new Date(year, month, day);
