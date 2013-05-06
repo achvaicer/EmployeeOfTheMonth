@@ -9,16 +9,19 @@
   <body>
     <div class="container">
         <div class="row">
-            <div class="span8">
+            <div class="span6">
                 <h1>This is your working time</h1>
             </div>
-            <div class="span4">
+            <div class="span2">
                 <span id="change-month" class="btn btn-info btn-mini"><i class="icon-calendar"></i>Change Month</span>
+            </div>
+            <div class="span2">
+                <label for="exact8" class="checkbox inline"><input type="checkbox" id="exact8" checked>Exactly 8 hours</label>
             </div>
         </div>
         <div id="calendar" class="row hide">
             <div class="offset6 span8">
-                <select id="month">
+                <select id="month" class="span2">
                     <option value="0">January</option>
                     <option value="1">February</option>
                     <option value="2">March</option>
@@ -32,7 +35,7 @@
                     <option value="10">November</option>
                     <option value="11">December</option>
                 </select> /
-                <select id="year">
+                <select id="year" class="span1">
                 </select>
 
             </div>
@@ -78,7 +81,7 @@
           render(month);
 
           $("#change-month").click(function () { $("#calendar").toggle("slow"); });
-          $("#year, #month").change(function () { render(parseInt($("#month").val())); });
+          $("#year, #month, #exact8").change(function () { render(parseInt($("#month").val())); });
 
       });
 
