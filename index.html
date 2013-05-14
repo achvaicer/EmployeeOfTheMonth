@@ -13,10 +13,10 @@
                 <h1>This is your working time</h1>
             </div>
             <div class="span2">
-                <span id="change-month" class="btn btn-info btn-mini"><i class="icon-calendar"></i>Change Month</span>
+                <span id="change-month" class="btn btn-info btn-mini"><i class="icon-calendar icon-white"></i>&nbsp;Change Month</span>
             </div>
             <div class="span2">
-                <label for="exact8" class="checkbox inline"><input type="checkbox" id="exact8" checked>Exactly 8 hours</label>
+                <span id="exact8" class="btn btn-success btn-mini"><i class="icon-ok icon-white"></i>&nbsp;Exactly 8 hours</span>
             </div>
         </div>
         <div id="calendar" class="row hide">
@@ -81,9 +81,22 @@
           render(month);
 
           $("#change-month").click(function () { $("#calendar").toggle("slow"); });
-          $("#year, #month, #exact8").change(function () { render(parseInt($("#month").val())); });
-
+          $("#year, #month").change(generateHours);
+          $("#exact8").click(function() {  
+              var self = $(this);
+              if (self.hasClass("btn-success")) {
+                  self.removeClass("btn-success").addClass("btn-danger");
+                  self.find("i").removeClass("icon-ok").addClass("icon-random");
+              }
+              else {
+                  self.removeClass("btn-danger").addClass("btn-success");
+                  self.find("i").removeClass("icon-random").addClass("icon-ok");
+              }
+              render(parseInt($("#month").val()));
+          });
       });
+
+      function generateHours() { render(parseInt($("#month").val())); }
 
       function render(month) {
           var len = lastday[month];

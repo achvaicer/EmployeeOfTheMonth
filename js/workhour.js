@@ -31,7 +31,7 @@ function WorkHour(day) {
 	this.EndLunch = new Date(this.StartLunch).addHours(this.MinimumLunchHours).addMinutes(this.getRandomMinutes()); 
 	this.Exit = new Date(this.Entrance).addHours(this.TotalWorkHours).addMinutes(this.TotalLunch());
 
-	if (!$("#exact8").is(":checked"))
+	if (!$("#exact8").hasClass("btn-success"))
 		if (day % 2 == 0)
 			this.Exit = new Date(this.Exit).addMinutes(this.getRandomMinutes() * -1);
 		else
